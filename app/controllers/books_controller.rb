@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def show
-
+    @book = ook.find(params[:id])
   end
 
   def new
