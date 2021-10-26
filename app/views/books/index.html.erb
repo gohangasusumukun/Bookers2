@@ -1,8 +1,24 @@
 <h1>Books</h1>
-<% @book.each do |book| %>
-  <p>Title</p>
-  <span>
-    <%= link_to book.title, book_path(book.id) %>
-  </span>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan = "3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @book.each do |book| %>
+      <tr>
+          <!--本のタイトル・内容-->
+        <td><%= book.title %></td>
+        <td><%= book.body%></td>
 
-<% end %>
+        <!--各リンク-->
+        <td><%= link_to "Show", book_path(book) %></td>
+        <td><%= link_to "Edit", edit_book_path(book) %></td>
+        <td><%= link_to "Destroy", book_path(book), method: :delete, data: {confirm: 'delete?'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
