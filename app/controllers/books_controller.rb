@@ -4,11 +4,11 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = ook.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def new
-     @book = Book.new
+    @book = Book.new
   end
 
   def create
@@ -17,7 +17,7 @@ class BooksController < ApplicationController
     # ２. データをデータベースに保存するためのsaveメソッド実行
     book.save
     # ３. トップ画面へリダイレクト
-    redirect_to '/top'
+    redirect_to book_path(book.id)
   end
 
   def edit
