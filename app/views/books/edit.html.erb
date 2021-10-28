@@ -1,5 +1,5 @@
  <!--編集ページ-->
- 
+
  <h1>Editing Book</h1>
  <!--エラー表示・メッセージ-->
  <% if @book.errors.any? %>
@@ -11,7 +11,7 @@
    </ul>
  <% end %>
 
-<!--ヘルパーメソッド-->
+ <!--ヘルパーメソッド-->
  <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
 
 
